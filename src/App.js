@@ -14,11 +14,15 @@ var App = React.createClass({
     this.setState({name: e.target.value});
   },
 
+  handleNameClick: function(e) {
+    this.setState({name: this.state.name + " plus 1 "});
+  },
+
   render: function(){
     return(
         <div>
           <input type="text" value={this.state.name} onChange={this.handleNameChange}/>
-          <h2>{this.state.name}</h2>
+          <h2 onClick={this.handleNameClick}>{this.state.name}</h2>
         </div>
       )
   }
